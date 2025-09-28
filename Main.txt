@@ -1490,8 +1490,7 @@ function redzlib:MakeWindow(Configs)
 	
 	local ControlSize1, ControlSize2 = MakeDrag(Create("ImageButton", MainFrame, {
 		Size = UDim2.new(0, 35, 0, 35),
-		Position = MainFrame.Size
-Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente,
+		Position = MainFrame.Size,
 		Active = true,
 		AnchorPoint = Vector2.new(0.8, 0.8),
 		BackgroundTransparency = 1,
@@ -1512,8 +1511,7 @@ Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente,
 		
 		MainScroll.Size = UDim2.new(0, ControlSize2.Position.X.Offset, 1, -TopBar.Size.Y.Offset)
 		Containers.Size = UDim2.new(1, -MainScroll.Size.X.Offset, 1, -TopBar.Size.Y.Offset)
-		MainFrame.Size
-Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente = ControlSize1.Position
+		MainFrame.Size = ControlSize1.Position
 	end
 	
 	ControlSize1:GetPropertyChangedSignal("Position"):Connect(ControlSize)
@@ -1521,9 +1519,7 @@ Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente = ControlSize1.Po
 	
 	ConnectSave(ControlSize1, function()
 		if not Minimized then
-			redzlib.Save.UISize = {MainFrame.Size
-Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente.X.Offset, MainFrame.Size
-Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente.Y.Offset}
+			redzlib.Save.UISize = {MainFrame.Size.X.Offset, MainFrame.Size.Y.Offset}
 			SaveJson("redz library V5.json", redzlib.Save)
 		end
 	end)
@@ -1585,11 +1581,9 @@ Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente.Y.Offset}
 		else
 			MinimizeButton.Image = "rbxassetid://10734924532"
 			SaveSize = MainFrame.Size
-Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente
 			ControlSize1.Visible = false
 			ControlSize2.Visible = false
-			CreateTween({MainFrame, "Size", UDim2.fromOffset(MainFrame.Size
-Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente.X.Offset, 28), 0.25, true})
+			CreateTween({MainFrame, "Size", UDim2.fromOffset(MainFrame.Size.X.Offset, 28), 0.25, true})
 			Minimized = true
 		end
 		
@@ -2084,8 +2078,7 @@ Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente.X.Offset, 28), 0.
 			})
 			
 			local DropFrame = Create("Frame", NoClickFrame, {
-				Size = UDim2.new(SelectedFrame.Size
-Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente.X, 0, 0),
+				Size = UDim2.new(SelectedFrame.Size.X, 0, 0),
 				BackgroundTransparency = 0.1,
 				BackgroundColor3 = Color3.fromRGB(255, 255, 255),
 				AnchorPoint = Vector2.new(0, 1),
@@ -2164,8 +2157,7 @@ Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente.X, 0, 0),
 			local function CalculatePos()
 				local FramePos = SelectedFrame.AbsolutePosition
 				local ScreenSize = ScreenGui.AbsoluteSize
-				local ClampX = math.clamp((FramePos.X / UIScale), 0, ScreenSize.X / UIScale - DropFrame.Size
-Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente.X.Offset)
+				local ClampX = math.clamp((FramePos.X / UIScale), 0, ScreenSize.X / UIScale - DropFrame.Size.X.Offset)
 				local ClampY = math.clamp((FramePos.Y / UIScale) , 0, ScreenSize.Y / UIScale)
 				
 				local NewPos = UDim2.fromOffset(ClampX, ClampY)
