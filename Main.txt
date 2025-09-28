@@ -12,24 +12,24 @@ local redzlib = {
     Themes = {
         Darker = {
             ["Color Hub 1"] = ColorSequence.new({
-                ColorSequenceKeypoint.new(0.00, Color3.fromRGB(10, 20, 60)),   -- Azul escuro
-                ColorSequenceKeypoint.new(0.50, Color3.fromRGB(40, 120, 255)), -- Azul claro
-                ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))       -- Preto
+                ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 0)),
+                ColorSequenceKeypoint.new(0.50, Color3.fromRGB(130, 0, 0)),
+                ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 0, 0))
             }),
-            ["Color Hub 2"] = Color3.fromRGB(0, 0, 0),                        -- Fundo secundário preto
-            ["Color Stroke"] = Color3.fromRGB(100, 180, 255),                 -- Contorno azul claro
-            ["Color Theme"] = Color3.fromRGB(40, 120, 255),                   -- Azul claro como cor de destaque
-            ["Color Text"] = Color3.fromRGB(243, 243, 243),                   -- Texto branco
-            ["Color Dark Text"] = Color3.fromRGB(100, 180, 255),              -- Contorno azul claro para textos
-            ["Background Transparency"] = 1,                                  -- Fundo totalmente transparente
-            ["Background Color"] = Color3.fromRGB(0, 0, 0)                    -- Cor de fundo caso mude a transparência
+            ["Color Hub 2"] = Color3.fromRGB(255, 0, 0),
+            ["Color Stroke"] = Color3.fromRGB(40, 40, 40),
+            ["Color Theme"] = Color3.fromRGB(255, 0, 0),
+            ["Color Text"] = Color3.fromRGB(243, 243, 243),
+            ["Color Dark Text"] = Color3.fromRGB(180, 180, 180),
+            -- Fundo invisível
+            ["Background Transparency"] = 1, -- 1 = totalmente transparente
+            ["Background Color"] = Color3.fromRGB(0, 0, 0) -- Cor opcional se mudar transparência
         }
+    },
+    Info = {
+        Version = "1.1.0"
     }
 }
-	},
-	Info = {
-		Version = "1.1.0"
-	},
 	Save = {
 		UISize = {440, 380},
 		TabSize = 140,
