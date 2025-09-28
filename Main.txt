@@ -9,9 +9,9 @@ local Player = Players.LocalPlayer
 local PlayerMouse = Player:GetMouse()
 
 local redzlib = {
-    Themes = {
-        Darker = {
-            ["Color Hub 1"] = ColorSequence.new({
+	Themes = {
+		Darker = {
+			["Color Hub 1"] = ColorSequence.new({
                 ColorSequenceKeypoint.new(0.00, Color3.fromRGB(10, 20, 60)),   -- Azul escuro
                 ColorSequenceKeypoint.new(0.50, Color3.fromRGB(40, 120, 255)), -- Azul claro
                 ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))       -- Preto
@@ -23,12 +23,11 @@ local redzlib = {
             ["Color Dark Text"] = Color3.fromRGB(100, 180, 255),              -- Contorno azul claro para textos
             ["Background Transparency"] = 0.4,                                -- Transparência parcial (0.4 = 40% visível)
             ["Background Color"] = Color3.fromRGB(0, 0, 0)                    -- Cor de fundo (opcional)
-        }
-    },
-    Info = {
-        Version = "1.1.0"
-    }
-}
+		}
+	},
+	Info = {
+		Version = "1.1.0"
+	},
 	Save = {
 		UISize = {440, 380},
 		TabSize = 140,
