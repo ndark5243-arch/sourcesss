@@ -12,15 +12,15 @@ local redzlib = {
 	Themes = {
 		Darker = {
 			["Color Hub 1"] = ColorSequence.new({
-    ColorSequenceKeypoint.new(0.00, Color3.fromRGB(10, 20, 60)),  -- Azul escuro
-    ColorSequenceKeypoint.new(0.50, Color3.fromRGB(40, 80, 200)), -- Azul claro
-    ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))      -- Preto
+    ColorSequenceKeypoint.new(0.00, Color3.fromRGB(10, 20, 60)),   -- Azul escuro
+    ColorSequenceKeypoint.new(0.50, Color3.fromRGB(40, 120, 255)), -- Azul claro
+    ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))       -- Preto
 }),
-["Color Hub 2"] = Color3.fromRGB(0, 0, 0), -- Fundo secundário preto
-["Color Stroke"] = Color3.fromRGB(30, 60, 200), -- Contorno azulado
-["Color Theme"] = Color3.fromRGB(40, 80, 200), -- Azul claro como cor de destaque
-["Color Text"] = Color3.fromRGB(243, 243, 243), -- Texto branco
-["Color Dark Text"] = Color3.fromRGB(30, 60, 200) -- Contorno azul
+["Color Hub 2"] = Color3.fromRGB(0, 0, 0),                        -- Fundo secundário preto
+["Color Stroke"] = Color3.fromRGB(100, 180, 255),                 -- Contorno azul claro
+["Color Theme"] = Color3.fromRGB(40, 120, 255),                   -- Azul claro como cor de destaque
+["Color Text"] = Color3.fromRGB(243, 243, 243),                   -- Texto branco
+["Color Dark Text"] = Color3.fromRGB(100, 180, 255)               -- Contorno azul claro para textos
 		}
 	},
 	Info = {
@@ -1488,7 +1488,8 @@ function redzlib:MakeWindow(Configs)
 	
 	local ControlSize1, ControlSize2 = MakeDrag(Create("ImageButton", MainFrame, {
 		Size = UDim2.new(0, 35, 0, 35),
-		Position = MainFrame.Size,
+		Position = MainFrame.Size
+Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente,
 		Active = true,
 		AnchorPoint = Vector2.new(0.8, 0.8),
 		BackgroundTransparency = 1,
@@ -1509,7 +1510,8 @@ function redzlib:MakeWindow(Configs)
 		
 		MainScroll.Size = UDim2.new(0, ControlSize2.Position.X.Offset, 1, -TopBar.Size.Y.Offset)
 		Containers.Size = UDim2.new(1, -MainScroll.Size.X.Offset, 1, -TopBar.Size.Y.Offset)
-		MainFrame.Size = ControlSize1.Position
+		MainFrame.Size
+Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente = ControlSize1.Position
 	end
 	
 	ControlSize1:GetPropertyChangedSignal("Position"):Connect(ControlSize)
@@ -1517,7 +1519,9 @@ function redzlib:MakeWindow(Configs)
 	
 	ConnectSave(ControlSize1, function()
 		if not Minimized then
-			redzlib.Save.UISize = {MainFrame.Size.X.Offset, MainFrame.Size.Y.Offset}
+			redzlib.Save.UISize = {MainFrame.Size
+Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente.X.Offset, MainFrame.Size
+Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente.Y.Offset}
 			SaveJson("redz library V5.json", redzlib.Save)
 		end
 	end)
@@ -1579,9 +1583,11 @@ function redzlib:MakeWindow(Configs)
 		else
 			MinimizeButton.Image = "rbxassetid://10734924532"
 			SaveSize = MainFrame.Size
+Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente
 			ControlSize1.Visible = false
 			ControlSize2.Visible = false
-			CreateTween({MainFrame, "Size", UDim2.fromOffset(MainFrame.Size.X.Offset, 28), 0.25, true})
+			CreateTween({MainFrame, "Size", UDim2.fromOffset(MainFrame.Size
+Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente.X.Offset, 28), 0.25, true})
 			Minimized = true
 		end
 		
@@ -2076,7 +2082,8 @@ function redzlib:MakeWindow(Configs)
 			})
 			
 			local DropFrame = Create("Frame", NoClickFrame, {
-				Size = UDim2.new(SelectedFrame.Size.X, 0, 0),
+				Size = UDim2.new(SelectedFrame.Size
+Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente.X, 0, 0),
 				BackgroundTransparency = 0.1,
 				BackgroundColor3 = Color3.fromRGB(255, 255, 255),
 				AnchorPoint = Vector2.new(0, 1),
@@ -2155,7 +2162,8 @@ function redzlib:MakeWindow(Configs)
 			local function CalculatePos()
 				local FramePos = SelectedFrame.AbsolutePosition
 				local ScreenSize = ScreenGui.AbsoluteSize
-				local ClampX = math.clamp((FramePos.X / UIScale), 0, ScreenSize.X / UIScale - DropFrame.Size.X.Offset)
+				local ClampX = math.clamp((FramePos.X / UIScale), 0, ScreenSize.X / UIScale - DropFrame.Size
+Frame.BackgroundTransparency = 0.3  -- Fundo meio transparente.X.Offset)
 				local ClampY = math.clamp((FramePos.Y / UIScale) , 0, ScreenSize.Y / UIScale)
 				
 				local NewPos = UDim2.fromOffset(ClampX, ClampY)
