@@ -19,8 +19,8 @@ local redzlib = {
 ["Color Hub 2"] = Color3.fromRGB(0, 0, 0), -- Fundo secundário preto
 ["Color Stroke"] = Color3.fromRGB(30, 60, 200), -- Contorno azulado
 ["Color Theme"] = Color3.fromRGB(40, 80, 200), -- Azul claro como cor de destaque
-["Color Text"] = Color3.fromRGB(20, 20, 20), -- Texto quase preto
-["Color Dark Text"] = Color3.fromRGB(30, 60, 200) -- Contorno/texto auxiliar azulado
+["Color Text"] = Color3.fromRGB(243, 243, 243), -- Texto branco
+["Color Dark Text"] = Color3.fromRGB(30, 60, 200) -- Contorno azul
 		}
 	},
 	Info = {
